@@ -1,0 +1,62 @@
+#!/bin/python3
+
+#By: Jankees
+#Date: 26/09/21
+#©2021
+
+import os as s
+
+
+def bin_to_str(binario):
+    binario = str(binario)
+    caractere = ''
+    string = ''
+    tamanho = len(binario)
+    k = 1
+    for j in binario:
+        if j != ' ':
+            caractere += j
+            if k == tamanho:
+                string += chr(int(caractere, 2))
+        else:
+            string += chr(int(caractere, 2))
+            caractere = ''  # 0x101100110
+        k += 1
+    return string
+
+
+def str_to_bin(string):
+    binario = ''
+    for i in string:
+        binario += bin(ord(i))[2::] + ' '
+    return binario
+
+def text():
+    text = str(input("Entre com um texto: "))
+    binary = str_to_bin(text)
+    print("tradução é:\n", binary)
+
+def bino():
+    binary = str(input("Entre com um binario: "))
+    text = bin_to_str(binary)
+    print("tradução é:\n", text)
+
+def main():
+    s.system("sleep 1")
+    s.system("clear")
+    print("""
+[1] texto -> binario
+[2] binario -> texto
+    """)
+    idc = input("Sua escolha: ")
+    if idc == "1":
+        text()
+
+    elif idc == "2":
+        bino()
+
+    else:
+        print(f"escolha '{idc}' inexistente!")
+        main()
+
+main()
