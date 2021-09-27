@@ -1,6 +1,6 @@
 # 👋Hi, I am Jankees
 
-<2>Conversor Binário/Texto</h2>
+<h2>Conversor Binário/Texto</h2>
 
 _Ferramenta criada para converter Texto em binário/binário em texto!_
 
